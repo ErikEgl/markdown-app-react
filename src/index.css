@@ -1,25 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-html,
-body {
-  margin: 0;
-  padding: 0;
-  color: #222222;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  font-family: Poppins, sans-serif;
-}
-
-h1 {
-  color: #000000;
-  font-size: 2.25rem;
-}
-
-p {
-  font-size: 1rem;
-}
-
 .container {
   max-width: 1400px;
   width: 80%;
@@ -74,7 +52,7 @@ button:focus {
   cursor: pointer;
   background-color: #4A4E74;
   border: none;
-  color: white;
+  color: #ffffff;
   border-radius: 3px;
   height: 30px;
   width: 30px;
@@ -84,7 +62,7 @@ button:focus {
   cursor: pointer;
   background-color: #4A4E74;
   border: none;
-  color: white;
+  color: #ffffff;
   border-radius: 3px;
   padding: 1rem;
 }
@@ -115,7 +93,7 @@ button:focus {
 }
 
 .note-summary:not(:last-of-type) {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid gainsboro;
 }
 
 .text-snippet {
@@ -134,12 +112,12 @@ button:focus {
 }
 
 .selected-note .text-snippet {
-  color: white;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .gutter {
-  background-color: #eee;
+  background-color: #e8e8e8;
   background-repeat: no-repeat;
   background-position: 50%;
 }
@@ -163,7 +141,7 @@ button:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 
 /*# sourceMappingURL=index.css.map */
