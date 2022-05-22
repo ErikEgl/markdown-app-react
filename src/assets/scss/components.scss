@@ -44,9 +44,9 @@ button:focus {
 
 .new-note {
     cursor: pointer;
-    background-color: #4A4E74;
+    background-color: $main-bg-color;
     border: none;
-    color: white;
+    color: $white;
     border-radius: 3px;
     height: 30px;
     width: 30px;
@@ -54,9 +54,9 @@ button:focus {
 
 .first-note {
     cursor: pointer;
-    background-color: #4A4E74;
+    background-color: $main-bg-color;
     border: none;
-    color: white;
+    color: $white;
     border-radius: 3px;
     padding: 1rem;
 }
@@ -87,7 +87,7 @@ button:focus {
 }
 
 .note-summary:not(:last-of-type) {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid darken($light-gray, 10%);
 }
 
 .text-snippet {
@@ -95,23 +95,23 @@ button:focus {
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.2rem;
-    color: #4A4E74;
+    color: $main-text-color;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .selected-note {
-    background-color: #4A4E74;
+    background-color: $main-bg-color;
 }
 
 .selected-note .text-snippet {
-    color: white;
+    color: $white;
     font-weight: 700;
 }
 
 .gutter {
-    background-color: #eee;
+    background-color: darken($light-gray, 5%);
 
     background-repeat: no-repeat;
     background-position: 50%;
@@ -136,5 +136,5 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: $light-gray;
 }
