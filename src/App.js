@@ -1,16 +1,11 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
-import { data } from "./data";
+// import { data } from "./data";
 import Split from "react-split";
 import { nanoid } from "nanoid";
 
 export default function App() {
-  /**
-   * Challenge: When the user edits a note, reposition
-   * it in the list of notes to the top of the list
-   */
-
   const [notes, setNotes] = React.useState(
     () => JSON.parse(localStorage.getItem("notes")) || []
   );
@@ -31,13 +26,23 @@ export default function App() {
   }
 
   function updateNote(text) {
-    setNotes((oldNotes) =>
-      oldNotes.map((oldNote) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, body: text }
-          : oldNote;
-      })
-    );
+    setNotes((oldNotes) => {
+      const newArray = [];
+      oldNotes.forEach((oldNote) => {
+        if (oldNote.id === currentNoteId) {
+          newArray.unshift({ ...oldNote, body: text });
+        } else {
+          newArray.push(oldNote);
+        }
+      });
+      return newArray;
+    });
+  }
+
+  function deleteNote(event, noteId) {
+    event.stopPropagation();
+    const filteredNotes = notes.filter(note => note.id !== noteId);
+    setNotes(filteredNotes);
   }
 
   function findCurrentNote() {
@@ -57,6 +62,7 @@ export default function App() {
             currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
+            deleteNote={deleteNote}
           />
           {currentNoteId && notes.length > 0 && (
             <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
